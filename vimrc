@@ -75,8 +75,27 @@ set undodir=~/.vim/tmp//
 set undofile
 set undolevels=5000
 
-" Ack
-nno <leader>a :Ack<Space>
+" fugitive
+" Fugitive
+no <leader>gd :Gdiff<cr>
+nno <leader>gs :Gstatus<CR><C-W>15+
+nno <leader>gw :Gwrite<cr>
+nno <leader>ga :Gadd<cr>
+nno <leader>gb :Gblame<cr>
+nno <leader>gco :Gcheckout<cr>
+nno <leader>gci :Gcommit<cr>
+nno <leader>gm :Gmove<cr>
+nno <leader>gr :Gremove<cr>
+nno <leader>gl :Glog<cr>
+" Cleanup fugitive buffers
+autocmd BufReadPost fugitive://* set bufhidden=delete
+autocmd BufReadPost fugitive://*
+  \ if fugitive#buffer().type() =~# '^\%(tree\|blob\)$' |
+  \   nnoremap <buffer> .. :edit %:h<CR> |
+  \ endif
+
+" ack
+nno <leader>a :Ack<space>
 nno <leader>A :Ack <cword><CR>
 nno <leader>a+ :Ack --noignore-dir=
 

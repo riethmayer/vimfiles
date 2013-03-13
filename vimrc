@@ -52,7 +52,8 @@ Bundle 'jimenezrick/vimerl'
 Bundle 'davidoc/taskpaper.vim'
 Bundle 'vlasar/snipmate'
 Bundle 'asux/snipmate-snippets'
-
+Bundle 'benmills/vimux'
+Bundle 'jgdavey/vim-turbux'
 
 if g:first_time
   silent exec ":BundleInstall"
@@ -60,28 +61,6 @@ endif
 
 syntax enable             " turn on syntax highlighting
 filetype plugin indent on " turn on file type detection
-
-" handle cursor shape in terminal & tmux
-if exists('$ITERM_PROFILE')
-  if exists('$TMUX')
-    let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
-    let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
-  else
-    let &t_SI = "\<Esc>]50;CursorShape=1\x7"
-    let &t_EI = "\<Esc>]50;CursorShape=0\x7"
-  endif
-endif
-
-" handle mouse
-if has('mouse')
-  set mouse=a
-  set ttymouse=xterm2
-  if &term =~ "xterm" || &term =~ "screen"
-    autocmd VimEnter *    set ttymouse=xterm2
-    autocmd FocusGained * set ttymouse=xterm2
-    autocmd BufEnter *    set ttymouse=xterm2
-  endif
-endif
 
 " prepare tmp
 silent execute '!find ~/.vim/tmp/ -type f -mtime +3 -exec rm {} \;'
@@ -103,7 +82,11 @@ nno <leader>a+ :Ack --noignore-dir=
 
 " power line
 set laststatus=2              " show status line
-let g:ctrlp_reuse_window = 1  " configure powerline symbols
+let g:Powerline_symbols = 'fancy'
+
+let g:buffergator_suppress_keymaps=1
+nnoremap <silent> <Leader>b :BuffergatorOpen<CR>
+nnoremap <silent> <Leader>B :BuffergatorClose<CR>
 
 " CtrlP
 nnoremap <leader>t :CtrlP<CR>
@@ -114,6 +97,12 @@ let g:ctrlp_reuse_window = 1
 " NERDTree
 nnoremap <leader>p :NERDTreeToggle<CR>
 let NERDTreeQuitOnOpen=1
+
+" Turbux
+let g:turbux_command_prefix = 'bundle exec'
+let g:no_turbux_mappings = 1
+nmap <leader>m <Plug>SendTestToTmux
+nmap <leader>M <Plug>SendFocusedTestToTmux
 
 " line numbering & Toggle
 set relativenumber
@@ -244,5 +233,22 @@ set term=screen-256color
 set background=dark
 colorscheme hemisu        " select color scheme
 
+" handle cursor shape in terminal & tmux
+if exists('$TMUX')
+  let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
+  let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
+else
+  let &t_SI = "\<Esc>]50;CursorShape=1\x7"
+  let &t_EI = "\<Esc>]50;CursorShape=0\x7"
+endif
 
+" handle mouse
+if has('mouse')
+  set mouse=a
+  if &term =~ "xterm" || &term =~ "screen"
+    autocmd VimEnter *    set ttymouse=xterm2
+    autocmd FocusGained * set ttymouse=xterm2
+    autocmd BufEnter *    set ttymouse=xterm2
+  endif
+endif
 

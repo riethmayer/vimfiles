@@ -1,3 +1,7 @@
+if $SHELL =~ 'fish'
+  set shell='/bin/sh'
+endif
+
 " must have!
 command! -bar -nargs=* Rc e $MYVIMRC       " edit this file
 command! -bar -nargs=* Rl :source $MYVIMRC " reload this file
@@ -98,6 +102,9 @@ autocmd BufReadPost fugitive://*
 nno <leader>a :Ack<space>
 nno <leader>A :Ack <cword><CR>
 nno <leader>a+ :Ack --noignore-dir=
+
+" Explore
+nno <leader>e :Explore<cr>
 
 " power line
 set laststatus=2              " show status line

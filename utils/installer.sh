@@ -2,7 +2,9 @@
 
 if [ -d $HOME/.vim ]
 then
-    cd ~/.vim ; git pull    
+    cd ~/.vim ; git pull
 else
-    cd ~ ; git clone https://github.com/andrzejsliwa/vimfiles.git ~/.vim; ln -s $HOME/.vim/vimrc $HOME/.vimrc ; cd - 
+    cd ~ ; git clone https://github.com/andrzejsliwa/vimfiles.git ~/.vim; ln -s $HOME/.vim/vimrc $HOME/.vimrc ; cd -
+    ln -s $HOME/.vim/vimrc $HOME/.vimrc
+    ln -s $HOME/.vim/tmux.conf $HOME/.tmux.conf
 fi

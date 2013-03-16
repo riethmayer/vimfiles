@@ -58,6 +58,7 @@ Bundle 'vlasar/snipmate'
 Bundle 'asux/snipmate-snippets'
 Bundle 'benmills/vimux'
 Bundle 'jgdavey/vim-turbux'
+Bundle 'troydm/pb.vim'
 
 if g:first_time
   silent exec ":BundleInstall"
@@ -204,10 +205,6 @@ set splitright
 set splitbelow
 nno <silent> <leader>v <C-W>v
 nno <silent> <leader>s <C-W>s
-
-" configure paste mode
-set nostartofline
-set pastetoggle=<F3>
 
 set wildmenu
 set wildmode=list:full

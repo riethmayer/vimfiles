@@ -122,7 +122,7 @@ let g:ctrlp_cache_dir = $HOME.'/.vim/tmp/.cache/ctrlp'
 let g:ctrlp_reuse_window = 1
 
 " NERDTree
-nnoremap <leader>p :NERDTreeToggle<CR>
+nnoremap <leader>o :NERDTreeToggle<CR>
 let NERDTreeQuitOnOpen=1
 
 " Turbux
@@ -179,6 +179,9 @@ set titlestring=%f%(\ [%M]%)
 set encoding=utf-8
 set fileformats=unix
 set hidden " hide buffers when not displayed
+set ttimeout
+set ttimeoutlen=20
+set notimeout
 
 " configure wrapping
 set wrap

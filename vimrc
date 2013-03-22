@@ -50,7 +50,6 @@ Bundle 'tpope/vim-unimpaired'
 Bundle 'vim-ruby/vim-ruby'
 Bundle 'asux/vim-capybara'
 Bundle 'Townk/vim-autoclose'
-Bundle 'jeetsukumaran/vim-buffergator'
 Bundle 'cakebaker/scss-syntax.vim'
 Bundle 'othree/html5.vim'
 Bundle 'mattn/gist-vim'
@@ -113,10 +112,6 @@ nno <leader>e :Explore<cr>
 " power line
 set laststatus=2              " show status line
 let g:Powerline_symbols = 'fancy'
-
-let g:buffergator_suppress_keymaps=1
-nnoremap <silent> <Leader>b :BuffergatorOpen<CR>
-nnoremap <silent> <Leader>B :BuffergatorClose<CR>
 
 " CtrlP
 nnoremap <leader>t :CtrlP<CR>
@@ -291,3 +286,4 @@ endif
 
 nno <leader>c :VimuxPromptCommand<cr>
 nno <leader>l :w<cr>:VimuxRunLastCommand<cr>
+nno <leader>b :CtrlPBuffer<cr>

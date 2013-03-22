@@ -312,14 +312,14 @@
   nno <leader>A :Ack <cword><CR>
   nno <leader>a+ :Ack --noignore-dir=
   nno <leader>e :Explore<cr>
-  nnoremap <leader>t :CtrlP<CR>
-  nnoremap <leader>o :NERDTreeToggle<CR>
-  nmap <leader>m <Plug>SendTestToTmux
-  nmap <leader>M <Plug>SendFocusedTestToTmux
-  nnoremap <leader>n :call NumberToggle()<CR>
+  nno <leader>t :CtrlP<CR>
+  nno <leader>o :NERDTreeToggle<CR>
+  nno <leader>n :call NumberToggle()<CR>
   nmap <leader>y <Plug>Pbyank
   nmap <leader>p <Plug>Pbpaste
-  nnoremap <leader><leader> <c-^>
+  nmap <leader>m <Plug>SendTestToTmux
+  nmap <leader>M <Plug>SendFocusedTestToTmux
+  nno <leader><leader> <c-^>
   nno <leader>x <C-W>c
   nno <leader>X :bd<CR>
   nno <silent> <leader>v <C-W>v
@@ -328,10 +328,10 @@
   nno <leader>c :VimuxPromptCommand<cr>
   nno <leader>l :w<cr>:VimuxRunLastCommand<cr>
   nno <leader>b :CtrlPBuffer<cr>
-  nnoremap ; :
-  nnoremap : ;
-  vnoremap ; :
-  vnoremap : ;
+  nno ; :
+  nno : ;
+  vno ; :
+  vno : ;
   nno > >>
   nno < <<
   nmap < <<

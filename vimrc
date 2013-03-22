@@ -290,3 +290,4 @@ endif
 " Keybindings
 
 nno <leader>c :VimuxPromptCommand<cr>
+nno <leader>l :w<cr>:VimuxRunLastCommand<cr>

@@ -147,7 +147,7 @@ function! NumberToggle()
     set relativenumber
   endif
 endfunc
-nnoremap <C-n> :call NumberToggle()<CR>
+nnoremap <leader>n :call NumberToggle()<CR>
 
 " strip whitespace
 function! <SID>StripTrailingWhitespaces()

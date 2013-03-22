@@ -126,10 +126,14 @@ nnoremap <leader>p :NERDTreeToggle<CR>
 let NERDTreeQuitOnOpen=1
 
 " Turbux
-let g:turbux_command_prefix = 'bundle exec'
+let g:turbux_command_prefix = 'zeus'
 let g:no_turbux_mappings = 1
 nmap <leader>m <Plug>SendTestToTmux
 nmap <leader>M <Plug>SendFocusedTestToTmux
+
+nmap <leader>y <Plug>Pbyank
+nmap <leader>p <Plug>Pbpaste
+nnoremap <leader><leader> <c-^>
 
 " line numbering & Toggle
 set relativenumber

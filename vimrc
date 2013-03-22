@@ -61,7 +61,7 @@ Bundle 'asux/snipmate-snippets'
 Bundle 'benmills/vimux'
 Bundle 'jgdavey/vim-turbux'
 Bundle 'troydm/pb.vim'
-Bundle 'mrmargolis/dogmatic.vim'
+" Bundle 'mrmargolis/dogmatic.vim'
 
 if g:first_time
   silent exec ":BundleInstall"

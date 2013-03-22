@@ -1,3 +1,5 @@
+" vim tips at http://vim.wikia.com/wiki/Best_Vim_Tips
+
 if $SHELL =~ 'fish'
   set shell='/bin/sh'
 endif
@@ -59,6 +61,7 @@ Bundle 'asux/snipmate-snippets'
 Bundle 'benmills/vimux'
 Bundle 'jgdavey/vim-turbux'
 Bundle 'troydm/pb.vim'
+Bundle 'mrmargolis/dogmatic.vim'
 
 if g:first_time
   silent exec ":BundleInstall"
@@ -180,6 +183,20 @@ set encoding=utf-8
 set fileformats=unix
 set hidden " hide buffers when not displayed
 
+"folding
+"za - toggle
+"zc - close
+"zo - open
+"zR - open all
+"zM - close all
+
+set foldmethod=indent   "fold based on indent
+set foldnestmax=10      "deepest fold is 10 levels
+set nofoldenable        "dont fold by default
+set foldlevel=1         "this is just what i use
+
+"
+
 " configure wrapping
 set wrap
 set formatoptions+=qrn1
@@ -228,13 +245,10 @@ autocmd FileType vim    setlocal expandtab   shiftwidth=2 tabstop=2
 autocmd FileType make   setlocal noexpandtab shiftwidth=4 tabstop=4
 
 " searching
-let @/ = ""
 set gdefault
 set incsearch
 set hlsearch
 nno <silent> <Leader>/ :nohlsearch<CR>
-nno / /\V
-vno / /\V
 
 "folding settings
 set foldmethod=indent   " fold based on indent
@@ -260,15 +274,6 @@ set term=screen-256color
 set background=dark
 colorscheme hemisu        " select color scheme
 
-" handle cursor shape in terminal & tmux
-if exists('$TMUX')
-  let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
-  let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
-else
-  let &t_SI = "\<Esc>]50;CursorShape=1\x7"
-  let &t_EI = "\<Esc>]50;CursorShape=0\x7"
-endif
-
 " handle mouse
 if has('mouse')
   set mouse=a
@@ -279,3 +284,6 @@ if has('mouse')
   endif
 endif
 
+" Keybindings
+
+nno <leader>c :VimuxPromptCommand<cr>

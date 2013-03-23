@@ -237,7 +237,7 @@
   set fileformats=unix
   set hidden " hide buffers when not displayed
   set ttimeout
-  set ttimeoutlen=20
+  set ttimeoutlen=10
   set notimeout
   set laststatus=2
   set relativenumber
@@ -246,6 +246,16 @@
   set formatoptions-=o
   set splitright
   set splitbelow
+  set display=lastline
+  set cmdheight=2
+  set more
+  set noerrorbells
+  set novisualbell
+  set visualbell t_vb=
+  set report=2
+  set scrolloff=3
+  set sidescrolloff=3
+  set pastetoggle=<leader>i
 " }}}
 
 " Searching {{{
@@ -276,10 +286,18 @@
 " }}}
 
 " Autocmds {{{
-  autocmd FileType ruby   setlocal expandtab   shiftwidth=2 tabstop=2
-  autocmd FileType erlang setlocal expandtab   shiftwidth=4 tabstop=4
-  autocmd FileType make   setlocal noexpandtab shiftwidth=4 tabstop=4
-  autocmd FileType vim setlocal foldenable  foldmethod=marker foldlevel=0 expandtab shiftwidth=2 tabstop=2
+  augroup FileTypes
+    au!
+    au FileType ruby   setlocal expandtab   shiftwidth=2 tabstop=2
+    au FileType erlang setlocal expandtab   shiftwidth=4 tabstop=4
+    au FileType make   setlocal noexpandtab shiftwidth=4 tabstop=4
+    au FileType vim setlocal foldenable  foldmethod=marker foldlevel=0 expandtab shiftwidth=2 tabstop=2
+  augroup END
+
+  augroup Other
+    au!
+    au InsertLeave * set nopaste
+  augroup END
 " }}}
 
 " Look & feel {{{
@@ -330,6 +348,8 @@
   nno <leader>b :CtrlPBuffer<cr>
   nno <leader>rc :Rc<cr>
   nno <leader>rl :Rl<cr>
+  nno <leader><Space> zR
+  nno <leader>z zMzvzz
   nno ; :
   nno : ;
   vno ; :

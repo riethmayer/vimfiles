@@ -124,7 +124,6 @@
   Bundle 'vim-ruby/vim-ruby'
   Bundle 'asux/vim-capybara'
   Bundle 'Townk/vim-autoclose'
-  Bundle 'jeetsukumaran/vim-buffergator'
   Bundle 'cakebaker/scss-syntax.vim'
   Bundle 'othree/html5.vim'
   Bundle 'mattn/gist-vim'
@@ -197,6 +196,7 @@
         set relativenumber
       endif
     endfunc
+    command! -bar -nargs=* NumberToggle call NumberToggle()
   " }}}
 
   " StripTrainlingWhitespaces() {{{
@@ -314,9 +314,9 @@
   nno <leader>e :Explore<cr>
   nno <leader>t :CtrlP<CR>
   nno <leader>o :NERDTreeToggle<CR>
-  nno <leader>n :call NumberToggle()<CR>
-  nmap <leader>y <Plug>Pbyank
-  nmap <leader>p <Plug>Pbpaste
+  nno <leader>n :NumberToggle<CR>
+  vno <leader>y :Pbyank<cr>
+  nno <leader>p :Pbpaste<cr>
   nmap <leader>m <Plug>SendTestToTmux
   nmap <leader>M <Plug>SendFocusedTestToTmux
   nno <leader><leader> <c-^>

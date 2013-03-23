@@ -309,12 +309,12 @@
 
 " Bindings {{{
   nno <leader>a :Ack<space>
-  nno <leader>A :Ack <cword><CR>
+  nno <leader>A :Ack <cword><cr>
   nno <leader>a+ :Ack --noignore-dir=
   nno <leader>e :Explore<cr>
-  nno <leader>t :CtrlP<CR>
-  nno <leader>o :NERDTreeToggle<CR>
-  nno <leader>n :NumberToggle<CR>
+  nno <leader>t :CtrlP<cr>
+  nno <leader>o :NERDTreeToggle<cr>
+  nno <leader>n :NumberToggle<cr>
   vno <leader>y :Pbyank<cr>
   nno <leader>p :Pbpaste<cr>
   nmap <leader>m <Plug>SendTestToTmux
@@ -324,10 +324,12 @@
   nno <leader>X :bd<CR>
   nno <silent> <leader>v <C-W>v
   nno <silent> <leader>s <C-W>s
-  nno <silent> <Leader>/ :nohlsearch<CR>
+  nno <silent> <Leader>/ :nohlsearch<cr>
   nno <leader>c :VimuxPromptCommand<cr>
   nno <leader>l :w<cr>:VimuxRunLastCommand<cr>
   nno <leader>b :CtrlPBuffer<cr>
+  nno <leader>rc :Rc<cr>
+  nno <leader>rl :Rl<cr>
   nno ; :
   nno : ;
   vno ; :

@@ -136,6 +136,8 @@
   Bundle 'troydm/pb.vim'
   Bundle 'vim-scripts/kickAssembler-syntax'
   "Bundle 'mrmargolis/dogmatic.vim' not ready yet for this ;)
+  Bundle 'vim-scripts/L9'
+  Bundle 'cometsong/vim-autocomplpop'
 " }}}
 
 " Triger install when firstime {{{

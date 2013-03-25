@@ -108,7 +108,15 @@
   Bundle 'Lokaltog/vim-powerline'
   Bundle 'kien/ctrlp.vim'
   Bundle 'mileszs/ack.vim'
-  Bundle 'scrooloose/nerdcommenter'
+  Bundle 'vim-scripts/tComment'
+  " tComment help {{{
+  "     gc{motion}   :: Toggle comments (for small comments within one line
+  "                     the &filetype_inline style will be used, if
+  "                     defined)
+  "     gcc          :: Toggle comment for the current line
+  "     gC{motion}   :: Comment region
+  "     gCc          :: Comment the current line
+  " }}}
   Bundle 'scrooloose/nerdtree'
   Bundle 'tpope/vim-fugitive'
   Bundle 'tpope/vim-rails'

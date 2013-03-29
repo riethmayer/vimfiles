@@ -265,6 +265,7 @@
   set report=2
   set scrolloff=3
   set sidescrolloff=3
+  set colorcolumn=79
   set pastetoggle=<leader>i
 " }}}
 

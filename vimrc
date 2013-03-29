@@ -298,13 +298,12 @@
 " Autocmds {{{
   augroup FileTypes
     au!
-    au FileType ruby   setlocal expandtab   shiftwidth=2 tabstop=2
-    au FileType go     setlocal expandtab   shiftwidth=2 tabstop=2
-    au FileType sh     setlocal expandtab   shiftwidth=2 tabstop=2
-    au FileType erlang setlocal expandtab   shiftwidth=4 tabstop=4
-    au FileType erlang setlocal expandtab   shiftwidth=4 tabstop=4
+    au FileType ruby   setlocal foldenable  foldmethod=syntax expandtab   shiftwidth=2 tabstop=2
+    au FileType go     setlocal foldenable  foldmethod=syntax expandtab   shiftwidth=2 tabstop=2
+    au FileType sh     setlocal foldenable  foldmethod=syntax expandtab   shiftwidth=2 tabstop=2
+    au FileType erlang setlocal foldenable  foldmethod=syntax expandtab   shiftwidth=4 tabstop=4
     au FileType make   setlocal noexpandtab shiftwidth=4 tabstop=4
-    au FileType vim setlocal foldenable  foldmethod=marker foldlevel=0 expandtab shiftwidth=2 tabstop=2
+    au FileType vim    setlocal foldenable  foldmethod=marker foldlevel=0 expandtab shiftwidth=2 tabstop=2
   augroup END
 
   augroup Other
@@ -339,30 +338,55 @@
 " }}}
 
 " Bindings {{{
+  " search via ack in project
   nno <leader>a :Ack<space>
   nno <leader>A :Ack <cword><cr>
   nno <leader>a+ :Ack --noignore-dir=
+  " open standar explore
   nno <leader>e :Explore<cr>
+  " open fuzzy finder
   nno <leader>t :CtrlP<cr>
+  " open nerd tree
   nno <leader>o :NERDTreeToggle<cr>
+  " switch relative/normal numbering
   nno <leader>n :NumberToggle<cr>
+  " copy to system clipboard
   vno <leader>y :Pbyank<cr>
+  " paste from system clipboard
   nno <leader>p :Pbpaste<cr>
-  nmap <leader>m <Plug>SendTestToTmux
-  nmap <leader>M <Plug>SendFocusedTestToTmux
+  " run whole test file
+  nmap <leader>M <Plug>SendTestToTmux
+  " run test under cursor
+  nmap <leader>m <Plug>SendFocusedTestToTmux
+  " TODO describe me!
   nno <leader><leader> <c-^>
+  " close current pane
   nno <leader>x <C-W>c
+  " close buffer
   nno <leader>X :bd<CR>
+  " split vertical
   nno <silent> <leader>v <C-W>v
+  " split horizontal
   nno <silent> <leader>s <C-W>s
+  " reset search
   nno <silent> <Leader>/ :nohlsearch<cr>
+  " run custom vimux command
   nno <leader>c :VimuxPromptCommand<cr>
+  " run last vimux command
   nno <leader>l :w<cr>:VimuxRunLastCommand<cr>
+  " browse buffers
   nno <leader>b :CtrlPBuffer<cr>
+  " edit vimrc
   nno <leader>rc :Rc<cr>
+  " reload vimrc
   nno <leader>rl :Rl<cr>
+  " open all foldings
   nno <leader><Space> zR
+  " open current folding and close others
   nno <leader>z zMzvzz
+  " reformat buffer
+  nno <leader>f gg=G
+  " TODO describe me!
   nno ; :
   nno : ;
   vno ; :

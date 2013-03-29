@@ -143,6 +143,7 @@
   Bundle 'jgdavey/vim-turbux'
   Bundle 'troydm/pb.vim'
   Bundle 'vim-scripts/kickAssembler-syntax'
+  Bundle 'jnwhiteh/vim-golang'
   "Bundle 'mrmargolis/dogmatic.vim' not ready yet for this ;)
   Bundle 'vim-scripts/L9'
   Bundle 'vim-scripts/AutoComplPop'
@@ -257,7 +258,6 @@
   set splitright
   set splitbelow
   set display=lastline
-  set cmdheight=2
   set more
   set noerrorbells
   set novisualbell
@@ -299,6 +299,9 @@
   augroup FileTypes
     au!
     au FileType ruby   setlocal expandtab   shiftwidth=2 tabstop=2
+    au FileType go     setlocal expandtab   shiftwidth=2 tabstop=2
+    au FileType sh     setlocal expandtab   shiftwidth=2 tabstop=2
+    au FileType erlang setlocal expandtab   shiftwidth=4 tabstop=4
     au FileType erlang setlocal expandtab   shiftwidth=4 tabstop=4
     au FileType make   setlocal noexpandtab shiftwidth=4 tabstop=4
     au FileType vim setlocal foldenable  foldmethod=marker foldlevel=0 expandtab shiftwidth=2 tabstop=2

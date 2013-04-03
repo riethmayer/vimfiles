@@ -265,8 +265,8 @@
   set report=2
   set scrolloff=3
   set sidescrolloff=3
-  set colorcolumn=79
   set pastetoggle=<leader>i
+  au BufWinEnter * let w:m2=matchadd('ToLong', '\%>80v.\+', -1)
 " }}}
 
 " Searching {{{
@@ -305,6 +305,9 @@
     au FileType erlang setlocal foldenable  foldmethod=syntax expandtab   shiftwidth=4 tabstop=4
     au FileType make   setlocal noexpandtab shiftwidth=4 tabstop=4
     au FileType vim    setlocal foldenable  foldmethod=marker foldlevel=0 expandtab shiftwidth=2 tabstop=2
+
+    au BufNewFile,BufRead *.app.src set filetype=erlang
+    au BufNewFile,BufRead *.config set filetype=erlang
   augroup END
 
   augroup Other

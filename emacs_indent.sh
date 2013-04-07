@@ -29,7 +29,7 @@ emacs --batch --eval "
     (message \"Formating file $1...\")
     (erlang-indent-current-buffer)
     (save-buffer)
-    (save-buffers-kill-emacs))" #> /dev/null 2>&1
+    (save-buffers-kill-emacs))" > /dev/null 2>&1
 
 
 

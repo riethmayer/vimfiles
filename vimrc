@@ -311,12 +311,13 @@ set wildignore+=*.beam
 " Autocmds {{{
 augroup FileTypes
   au!
-  au FileType ruby   setlocal foldenable  foldmethod=syntax expandtab   shiftwidth=2 tabstop=2
-  au FileType go     setlocal foldenable  foldmethod=syntax expandtab   shiftwidth=2 tabstop=2
-  au FileType sh     setlocal foldenable  foldmethod=syntax expandtab   shiftwidth=2 tabstop=2
-  au FileType erlang setlocal foldenable  foldmethod=syntax expandtab   shiftwidth=4 tabstop=4
-  au FileType make   setlocal noexpandtab shiftwidth=4 tabstop=4
-  au FileType vim    setlocal foldenable  foldmethod=marker foldlevel=0 expandtab shiftwidth=2 tabstop=2
+  au FileType ruby    setlocal foldenable  foldmethod=syntax expandtab   shiftwidth=2 tabstop=2
+  au FileType snippet setlocal foldenable  foldmethod=syntax expandtab   shiftwidth=4 tabstop=4
+  au FileType go      setlocal foldenable  foldmethod=syntax expandtab   shiftwidth=2 tabstop=2
+  au FileType sh      setlocal foldenable  foldmethod=syntax expandtab   shiftwidth=2 tabstop=2
+  au FileType erlang  setlocal foldenable  foldmethod=syntax shiftwidth=4 tabstop=4
+  au FileType make    setlocal noexpandtab shiftwidth=4 tabstop=4
+  au FileType vim     setlocal foldenable  foldmethod=marker foldlevel=0 expandtab shiftwidth=2 tabstop=2
 
   au BufNewFile,BufRead *.app.src set filetype=erlang
   au BufNewFile,BufRead *.config set filetype=erlang
@@ -374,7 +375,7 @@ nno <leader>p :Pbpaste<cr>
 nmap <leader>M <Plug>SendTestToTmux
 " run test under cursor
 nmap <leader>m <Plug>SendFocusedTestToTmux
-" TODO describe me!
+" switch to previous buffer
 nno <leader><leader> <c-^>
 " close current pane
 nno <leader>x <C-W>c
@@ -396,6 +397,8 @@ nno <leader>b :CtrlPBuffer<cr>
 nno <leader>rc :Rc<cr>
 " reload vimrc
 nno <leader>rl :Rl<cr>
+" reload all snippets
+nno <leader>rs :call ReloadAllSnippets()<cr>
 " open all foldings
 nno <leader><Space> zR
 " open current folding and close others

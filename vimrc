@@ -147,6 +147,7 @@ Bundle 'jnwhiteh/vim-golang'
 "Bundle 'mrmargolis/dogmatic.vim' not ready yet for this ;)
 Bundle 'vim-scripts/L9'
 Bundle 'vim-scripts/AutoComplPop'
+Bundle 'terryma/vim-multiple-cursors'
 " }}}
 
 " Triger install when firstime {{{

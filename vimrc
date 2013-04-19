@@ -144,10 +144,8 @@ Bundle 'jgdavey/vim-turbux'
 Bundle 'troydm/pb.vim'
 Bundle 'vim-scripts/kickAssembler-syntax'
 Bundle 'jnwhiteh/vim-golang'
-"Bundle 'mrmargolis/dogmatic.vim' not ready yet for this ;)
 Bundle 'vim-scripts/L9'
 Bundle 'terryma/vim-multiple-cursors'
-Bundle 'vim-scripts/AutoComplPop'
 " }}}
 
 " Triger install when firstime {{{
@@ -291,7 +289,7 @@ set hlsearch
 set foldmethod=indent   "fold based on indent
 set foldnestmax=10      "deepest fold is 10 levels
 set nofoldenable        "dont fold by default
-set foldlevel=1         "this is just what i use
+"set foldlevel=1         "this is just what i use
 " }}}
 
 " Wild ignores {{{
@@ -311,13 +309,13 @@ set wildignore+=*.beam
 " Autocmds {{{
 augroup FileTypes
   au!
-  au FileType ruby    setlocal foldenable  foldmethod=syntax expandtab   shiftwidth=2 tabstop=2
-  au FileType snippet setlocal foldenable  foldmethod=syntax expandtab   shiftwidth=4 tabstop=4
-  au FileType go      setlocal foldenable  foldmethod=syntax expandtab   shiftwidth=2 tabstop=2
-  au FileType sh      setlocal foldenable  foldmethod=syntax expandtab   shiftwidth=2 tabstop=2
-  au FileType erlang  setlocal foldenable  foldmethod=syntax shiftwidth=4 tabstop=4
+  au FileType ruby    setlocal expandtab   shiftwidth=2 tabstop=2
+  au FileType snippet setlocal expandtab   shiftwidth=4 tabstop=4
+  au FileType go      setlocal expandtab   shiftwidth=2 tabstop=2
+  au FileType sh      setlocal expandtab   shiftwidth=2 tabstop=2
+  au FileType erlang  setlocal expandtab   shiftwidth=4 tabstop=4
   au FileType make    setlocal noexpandtab shiftwidth=4 tabstop=4
-  au FileType vim     setlocal foldenable  foldmethod=marker foldlevel=0 expandtab shiftwidth=2 tabstop=2
+  au FileType vim     setlocal expandtab shiftwidth=2 tabstop=2
 
   au BufNewFile,BufRead *.app.src set filetype=erlang
   au BufNewFile,BufRead *.config set filetype=erlang
@@ -406,6 +404,8 @@ nno <leader>z zMzvzz
 " reformat buffer
 nno <leader>f gg=G
 nno <leader>fe :IndentErl<cr>
+
+nno <leader>w :set background=light<cr>
 " TODO describe me!
 nno ; :
 nno : ;

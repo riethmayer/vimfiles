@@ -146,6 +146,8 @@ Bundle 'vim-scripts/kickAssembler-syntax'
 Bundle 'jnwhiteh/vim-golang'
 Bundle 'vim-scripts/L9'
 Bundle 'terryma/vim-multiple-cursors'
+Bundle 'kchmck/vim-coffee-script'
+Bundle 'nono/vim-handlebars'
 " }}}
 
 " Triger install when firstime {{{
@@ -310,6 +312,7 @@ set wildignore+=*.beam
 augroup FileTypes
   au!
   au FileType ruby    setlocal expandtab   shiftwidth=2 tabstop=2
+  au FileType eruby    setlocal expandtab   shiftwidth=2 tabstop=2
   au FileType snippet setlocal expandtab   shiftwidth=4 tabstop=4
   au FileType go      setlocal expandtab   shiftwidth=2 tabstop=2
   au FileType sh      setlocal expandtab   shiftwidth=2 tabstop=2

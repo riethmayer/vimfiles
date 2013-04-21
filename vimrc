@@ -154,7 +154,7 @@ Bundle 'nono/vim-handlebars'
 if g:first_time
   silent exec ":BundleInstall"
 endif
-" }}}
+" }}}"
 
 " Renable syntax highlighting and file types detection {{{
 syntax enable
@@ -220,9 +220,21 @@ endfunc
 command! -bar -nargs=* NumberToggle call NumberToggle()
 " }}}
 
+" EditSnippet() {{{
+function! EditMySnippets()
+  execute ":e ~/.vim/snippets/" . &ft . ".snippets"
+endfunction
+
+function! ReloadMySnippets()
+  execute "silent :w"
+  execute "silent :bd"
+  execute "silent :call ReloadAllSnippets()"
+endfunction
+"}}}
+
 " StripTrainlingWhitespaces() {{{
 function! <SID>StripTrailingWhitespaces()
-  " Preparation: save last search, and cursor position.
+  " Preparation: "ave last search, and cursor position.
   let _s=@/
   let l = line(".")
   let c = col(".")
@@ -347,7 +359,7 @@ if has("gui_mac") || has("gui_macvim")
   set transparency=7
 endif
 
-set term=screen-256color
+set term=xterm-256color
 set t_Co=256
 colorscheme hemisu
 " }}}
@@ -393,7 +405,7 @@ nno <leader>X :bd<CR>
 " split vertical
 nno <silent> <leader>v <C-W>v
 " split horizontal
-nno <silent> <leader>s <C-W>s
+nno <silent> <leader>h <C-W>s
 " reset search
 nno <silent> <Leader>/ :nohlsearch<cr>
 " run custom vimux command
@@ -406,8 +418,10 @@ nno <leader>b :CtrlPBuffer<cr>
 nno <leader>rc :Rc<cr>
 " reload vimrc
 nno <leader>rl :Rl<cr>
-" reload all snippets
-nno <leader>rs :call ReloadAllSnippets()<cr>
+" reload snippets for current filetype
+nno <leader>sr :call ReloadMySnippets()<cr>
+" edit snippets for current filetype
+nno <leader>se :call EditMySnippets()<cr>
 " open all foldings
 nno <leader><Space> zR
 " open current folding and close others

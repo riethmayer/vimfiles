@@ -359,7 +359,7 @@ if has("gui_mac") || has("gui_macvim")
   set transparency=7
 endif
 
-set term=xterm-256color
+set term=screen-256color
 set t_Co=256
 set background=dark
 colorscheme hemisu

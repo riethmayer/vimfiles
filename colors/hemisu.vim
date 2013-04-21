@@ -212,5 +212,43 @@ hi! link helpHyperTextJump	Underlined
 hi! link helpURL	Underlined
 
 "}}}
-
+" Highlights - Erlang --------------------------------------{{{
+hi! link erlangStringModifier SpecialChar
+hi! link erlangModifier       SpecialChar
+hi! link erlangInteger        Number
+hi! link erlangFloat          Number
+hi! link erlangTodo           Todo
+hi! link erlangAnnotation     Special
+hi! link erlangComment        Comment
+hi! link erlangKeyword        Keyword
+hi! link erlangConditional    Conditional
+hi! link erlangBoolean        Boolean
+hi! link erlangGuard          Conditional
+hi! link erlangOperator       Operator
+hi! link erlangString         String
+hi! link erlangVariable       Keyword
+hi! link erlangAtom           Constant
+hi! link erlangRecord         Structure
+hi! link erlangTuple          Delimiter
+hi! link erlangList           Delimiter
+hi! link erlangAttribute      Keyword
+hi! link erlangInclude        Include
+hi! link erlangRecordDef      Keyword
+hi! link erlangDefine         Define
+hi! link erlangPreCondit      PreCondit
+hi! link erlangType           Type
+hi! link erlangMacro          Macro
+hi! link erlangBitType        Type
+hi! link erlangBitSize        Number
+hi! link erlangBinary         Keyword
+hi! link erlangBIF            Keyword
+hi! link erlangGBIF           Keyword
+hi! link erlangNoSpellString  String
+hi! link erlangPreProc        PreProc
+hi! link erlangDelimiter      Delimiter
+hi! link erlangBitDelimiter   Normal
+hi! link erlangHex            Number
+hi! link erlangFun            Keyword
+hi! link erlangBitVariable    Identifier
+"}}}
 " vim: fdm=marker

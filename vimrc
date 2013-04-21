@@ -135,7 +135,7 @@ Bundle 'Townk/vim-autoclose'
 Bundle 'cakebaker/scss-syntax.vim'
 Bundle 'othree/html5.vim'
 Bundle 'mattn/gist-vim'
-Bundle 'jimenezrick/vimerl'
+Bundle 'andrzejsliwa/vimerl'
 Bundle 'davidoc/taskpaper.vim'
 Bundle 'vlasar/snipmate'
 Bundle 'asux/snipmate-snippets'
@@ -194,6 +194,10 @@ let g:turbux_command_prefix = 'zeus'
 let g:no_turbux_mappings = 1
 " }}}
 
+" Vimerl {{{
+let g:erlang_highlight_bif = 1
+" }}}
+"
 " }}}
 
 " Usefull custom functions {{{
@@ -335,9 +339,8 @@ if has("gui_mac") || has("gui_macvim")
   set transparency=7
 endif
 
-set t_Co=256
 set term=screen-256color
-set background=dark
+set t_Co=256
 colorscheme hemisu
 " }}}
 

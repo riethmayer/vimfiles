@@ -199,7 +199,12 @@ let g:no_turbux_mappings = 1
 " Vimerl {{{
 let g:erlang_highlight_bif = 1
 " }}}
-"
+
+" Ack {{{
+" you need to install https://github.com/ggreer/the_silver_searcher
+let g:ackprg = 'ag --nogroup --nocolor --column'
+" }}}
+
 " }}}
 
 " Usefull custom functions {{{
